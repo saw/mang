@@ -1,5 +1,8 @@
 extends layout
 
 block content
-  div.
-    <p>Nothing here {{'yet' + '!'}}</p>
+  div(ng-controller="homeController as ctrl")
+    h1.
+        {{ctrl.title}}
+    div(home-directive)
+    
