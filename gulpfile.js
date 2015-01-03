@@ -5,6 +5,7 @@ var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var uglify = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
+var partialify = require('partialify');
 
 var less = require('gulp-less');
 var path = require('path');
@@ -28,9 +29,10 @@ gulp.task('less', function () {
 
 gulp.task('javascript', function() {
    console.log('browserifying');
-  var bundler = browserify({
-    entries: ['./client-app.js'],
-    debug: true
+   var bundler = browserify({
+      transform: partialify,
+      entries: ['./client-app.js'],
+      debug: true
   });
 
   var bundle = function() {
