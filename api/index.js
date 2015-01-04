@@ -32,7 +32,6 @@ router.get('/address/:id', function(req, res) {
 
 
 //no error checking! no security!
-
 /*
 {
    firstname: "Bob",
@@ -44,8 +43,21 @@ router.post('/address', function(req, res) {
    var id = generateUniqueId();
    // console.log('body', req.body);   
    store.set(id, req.body);
+   res.status(201);
    res.json({status:"ok", id:id})
 });
+
+router.put('/address/:id', function(req, res) {
+   var id = req.params.id;
+
+   if(store.get(id)) {
+      store.set(id, req.body);
+      res.json({status:'ok'});
+   } else {
+      res.send(400);
+      res.json({status:'not found'});
+   }
+})
 
 
 module.exports = router;
