@@ -6,4 +6,8 @@
    <form name="addAddress" ng-controller="createAddressController" ng-submit="onSubmit()">
       <div create-address></div>
    </div>
+   <p>
+      <input name="showhide" type="checkbox" ng-model="showmodal"><label for="showhide">Show a defered template?</label>
+   </p>
+   <modal ng-show='showmodal'></modal>
 </div>
