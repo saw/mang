@@ -71,7 +71,10 @@ gulp.task('watch', function() {
    gulp.watch('assets/**/*.less', ['less']);
 });
 
-gulp.task('default', ['javascript', 'less', 'watch'], function() {
-  // place code for your default task here
+gulp.task('build', ['javascript', 'less'], function() {
+  console.log('all done');
+});
 
+gulp.task('default', ['javascript', 'less', 'watch'], function() {
+  console.log('ready');
 });
