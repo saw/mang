@@ -1,4 +1,4 @@
-# An example architecure for an angular app
+# An example architecture for an angular app
 
 This is a way of laying out an app that makes sense to me. Missing: SMACSS for styles.
 
