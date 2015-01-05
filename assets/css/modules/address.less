@@ -1,0 +1,30 @@
+.address {
+
+   &.pending {
+      opacity: 0.5;
+   }
+
+   .name {
+      font-size: 16px;
+      margin: 10px 0 0;
+      font-weight: bold;
+   }
+
+   .email {
+      margin: 0;
+      padding: 0;
+      font-style: italic;
+      color: yellow;
+      @media @sm {
+         color: red;
+      }
+
+      @media @md {
+         color: blue;
+      }
+
+      @media @lg {
+         color: black;
+      }
+   }
+}

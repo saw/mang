@@ -2,9 +2,12 @@ doctype html
 html(ng-app="bookApp")
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/base.css')
+    link(rel='stylesheet', href='/stylesheets/styles.css')
     
   body
+   div#header
+      div.pure-menu.pure-menu-horizontal.pure-menu-open
+         h1 Address Book
    div.container
       block content
     script(src='/javascripts/0.0.0.mang.min.js')

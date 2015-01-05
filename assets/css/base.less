@@ -1,10 +1,27 @@
-@import "vendor/normalize.less";
-
-.pending {
-	color: #ccc;
+body {
+	background: @backgroundColor;
 }
 
-//never do this, not namespaced!
-input[disabled] {
-	opacity: 0.5;
+.b-form {
+	input[type="text"],
+	input[type="email"] {
+		background: @formBackground;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		padding: 4px;
+		display: block;
+		margin: 0 0 10px;
+	}
+
+	input[type="button"],
+	input[type="submit"],
+	button {
+		border: 0;
+		border-radius: 4px;
+		background: #6A6ACC;
+		color: white;
+		padding: 6px;
+		cursor: pointer;
+	}
+
 }

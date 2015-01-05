@@ -23,6 +23,7 @@ var exposify = require('exposify');
 var less = require('gulp-less');
 var path = require('path');
 
+
 exposify.config = { angular: 'angular'};
 
 var getBundleName = function () {
@@ -32,12 +33,12 @@ var getBundleName = function () {
 };
 
 gulp.task('less', function () {
-  gulp.src('./assets/css/*.less')
+
+  gulp.src(__dirname + '/assets/css/styles.less')
    .pipe(sourcemaps.init())
-    .pipe(less({
-      paths: ['./assets/css/base.less'],
-      compress: true
-    }))
+   .pipe(less()).on('error', function(err) {
+                console.log('Error with LESS.js', err.message);
+            })
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./public/stylesheets'));
 });
