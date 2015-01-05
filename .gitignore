@@ -2,3 +2,4 @@ node_modules
 npm-debug.log
 public/javascripts/*
 data.json
+.DS_Store
