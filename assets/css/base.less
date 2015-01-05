@@ -1,5 +1,6 @@
 body {
 	background: @backgroundColor;
+	color: @defaultTextColor;
 }
 
 .b-form {
@@ -18,10 +19,14 @@ body {
 	button {
 		border: 0;
 		border-radius: 4px;
-		background: #6A6ACC;
+		background: @defaultButtonColor;
 		color: white;
 		padding: 6px;
 		cursor: pointer;
+
+		&[disabled] {
+			background: @disabledButtonColor;
+		}
 	}
 
 }
