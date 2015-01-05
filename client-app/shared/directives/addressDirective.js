@@ -1,15 +1,14 @@
 module.exports = function(app) {
-	var template = require('./../templates/addressList.html');
-	app.directive('addressList', function() {
+	var template = require('./../templates/address.html');
+	app.directive('address', function() {
 
 		return {
 			restrict: 'AE',
-			replace: 'true',
 			// transclude:true,
-			scope: {addresses:'='},
+			scope: {data:'='},
 			template: template,
 			link: function(scope, elem, attrs) {
-				
+				console.log('yay', scope);
 			}
 		};
 	});

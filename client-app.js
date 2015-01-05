@@ -10,7 +10,7 @@ var app = angular.module('bookApp', ['ngRoute']);
 
 require('./client-app/shared/directives')(app);
 require('./client-app/shared/services')(app);
-require('./client-app/components')(app);
+require('./client-app/components/homeController.js')(app);
 
 
 

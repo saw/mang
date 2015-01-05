@@ -5,4 +5,5 @@
 //file must exist to require a directory
 module.exports = function(app) {
 	require('./addressListDirective.js')(app);
+	require('./addressDirective.js')(app);
 };

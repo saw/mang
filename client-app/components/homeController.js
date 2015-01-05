@@ -1,7 +1,14 @@
 module.exports = function(app) {
 	
-	var ctrl = app.controller('homeController', ['addressModel', function(addressModel) {
-		this.title = 'hello world';
-		this.addresses = addressModel.listAddresses();
+	var ctrl = app.controller('homeController', ['$scope', 'addressModel', function($scope, addressModel) {
+		$scope.title = 'hello world';
+		$scope.loading = true;
+		addressModel.loadAddresses().then(function() {
+			console.log('loaded');
+			$scope.loading = false;
+		});
+		$scope.addresses = addressModel;
 	}]);
+
+	require('./homeDirective.js')(ctrl);
 };

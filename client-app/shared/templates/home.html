@@ -1,4 +1,5 @@
 <div>
 	<p>{{title}}</p>
-	<p><address-list></address-list></p>
+	<p ng-show="loading">loading...</p>
+	<p ng-show="!loading"><address-list addresses=addresses></address-list></p>
 </div>
