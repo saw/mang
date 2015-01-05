@@ -9,7 +9,7 @@ module.exports = function(app) {
 			scope: {addresses:'='},
 			template: template,
 			link: function(scope, elem, attrs) {
-				
+				console.log(scope);
 			}
 		};
 	});

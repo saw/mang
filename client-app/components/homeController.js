@@ -6,8 +6,9 @@ module.exports = function(app) {
 		addressModel.loadAddresses().then(function() {
 			console.log('loaded');
 			$scope.loading = false;
+			$scope.addresses = addressModel.listAddresses();
 		});
-		$scope.addresses = addressModel;
+		
 	}]);
 
 	require('./homeDirective.js')(ctrl);

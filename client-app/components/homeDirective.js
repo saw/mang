@@ -4,7 +4,7 @@ module.exports = function(app) {
 		return {
 			template: template,
 			link: function(scope, el, attr) {
-				console.log(scope);
+				//nothing for now
 			}
 		};
 	});
