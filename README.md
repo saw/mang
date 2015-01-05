@@ -14,7 +14,7 @@ This app is built around [browserify](http://browserify.org), so modules are wri
    - Data comes from servies (`addressModelService.js`)
    - DOM interaction is via directives
    - Non-shared components still use directives for DOM/template loading
-   - Controllers are thing and bind data to views
+   - Controllers are thin and bind data to views
 
 
 ## Running
