@@ -10,3 +10,5 @@ Not missing: browserify for everything, a magic template loader, a terrible data
 git clone https://github.com/saw/mang.git
 npm install
 gulp build
+npm start
+```
