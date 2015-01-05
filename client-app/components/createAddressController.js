@@ -4,7 +4,7 @@ module.exports = function(app) {
 
 		$scope.firstname = '';
 		$scope.lastname = '';
-		$scope.email = null;
+		$scope.email = '';
 
 
 		$scope.onSubmit = function(e) {
@@ -19,7 +19,7 @@ module.exports = function(app) {
 			});
 			$scope.firstname = '';
 			$scope.lastname = '';
-			$scope.email = null;
+			$scope.email = '';
 		};
 	}]);
 
