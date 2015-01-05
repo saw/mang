@@ -1,7 +1,17 @@
-require('angular');
+require('./vendor/angular/angular-deps.js');
 
-var app = angular.module('bookApp', []);
-require('./client-app/components/homeController.js')(app);
-console.log('ok');
-var f = require('./test.html');
+var angular = require('angular');
+
+var app = angular.module('bookApp', ['ngRoute']);
+
+//this is a little odd, but the angular injection and
+//commonJS require fight a little bit, this seems to be the cleanest way to do things
+//obviously this could be automated
+
+require('./client-app/shared/directives')(app);
+require('./client-app/shared/services')(app);
+require('./client-app/components')(app);
+
+
+
 

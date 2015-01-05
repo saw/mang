@@ -1,14 +1,29 @@
 'use strict';
+
+//use commonJS modules on the client
 var browserify = require('browserify');
 var gulp = require('gulp');
+
+//this stuff is so we can stream text through things
+//with a simple api
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
+
+//minify js
 var uglify = require('gulp-uglify');
+
+//sourcemaps
 var sourcemaps = require('gulp-sourcemaps');
+
+//inline html with require('foo.html')
 var partialify = require('partialify');
+//wrap globals so var angular = require('angular)'
+var exposify = require('exposify');
 
 var less = require('gulp-less');
 var path = require('path');
+
+exposify.config = { angular: 'angular'};
 
 var getBundleName = function () {
   var version = require('./package.json').version;
@@ -30,7 +45,7 @@ gulp.task('less', function () {
 gulp.task('javascript', function() {
    console.log('browserifying');
    var bundler = browserify({
-      transform: partialify,
+      transform: [partialify, exposify],
       entries: ['./client-app.js'],
       debug: true
   });

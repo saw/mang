@@ -22,8 +22,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //if we don't inline some directive templates, we can fetch them with this
 app.use('/tmpl/:template', require('./lib/templateLoader.js'));
-app.use('/', routes);
 app.use('/api', require('./api'));
+app.use('/', routes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
