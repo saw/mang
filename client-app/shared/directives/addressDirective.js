@@ -8,7 +8,7 @@ module.exports = function(app) {
 			scope: {data:'='},
 			template: template,
 			link: function(scope, elem, attrs) {
-				console.log('yay', scope);
+				
 			}
 		};
 	});

@@ -4,12 +4,14 @@ module.exports = function(app) {
 		$scope.title = 'hello world';
 		$scope.loading = true;
 		addressModel.loadAddresses().then(function() {
-			console.log('loaded');
 			$scope.loading = false;
 			$scope.addresses = addressModel.listAddresses();
 		});
+		$scope.$on('addressModel:loaded', function() {
+			$scope.addresses = addressModel.listAddresses();
+		})
 		
 	}]);
-
+	require('./createAddressController.js')(ctrl);
 	require('./homeDirective.js')(ctrl);
 };

@@ -8,6 +8,7 @@ module.exports = function(app) {
       this.loadAddresses = function() {
          var promise = $http.get('/api/address').then(function(response) {
             data = response.data;
+            $rootScope.$broadcast('addressModel:loaded');
          });
 
          return promise;
@@ -23,6 +24,18 @@ module.exports = function(app) {
       this.listAddresses = function() {
          return data;
       };
+
+      this.addAddress = function(address) {
+         address.pending = true;
+         var index = data.push(address) - 1;
+         var promise = $http.post('/api/address', address).then(function(response) {
+            data[index].pending = false;
+            $rootScope.$broadcast('addressModel:loaded');
+         });
+         
+         
+         return promise;
+      }
       
    }]);
 }

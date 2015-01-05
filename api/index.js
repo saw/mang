@@ -41,7 +41,8 @@ router.get('/address/:id', function(req, res) {
 */
 router.post('/address', function(req, res) {
    var id = generateUniqueId();
-   // console.log('body', req.body);   
+   // console.log('body', req.body);
+   req.body.pending = false;
    store.set(id, req.body);
    res.status(201);
    res.json({status:"ok", id:id})

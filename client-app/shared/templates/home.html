@@ -1,5 +1,8 @@
 <div>
-	<p>{{title}}</p>
-	<p ng-show="loading">loading...</p>
-	<p ng-show="!loading"><address-list addresses=addresses></address-list></p>
+   <p>{{title}}</p>
+   <p ng-show="loading">loading...</p>
+   <p ng-show="!loading"><address-list addresses=addresses></address-list></p>
+   <form name="addAddress" ng-controller="createAddressController" ng-submit="onSubmit()">
+      <div create-address></div>
+   </div>
 </div>
