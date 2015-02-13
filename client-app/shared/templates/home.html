@@ -2,6 +2,8 @@
    <div class="pure-u-1 pure-u-md-2-3">
       <div class="l-pane">
          <h2>{{title}}</h2>
+         <a ng-click="doStuff()">do stuff</a>
+         {{cake}}
          <p ng-show="loading">loading...</p>
          <p ng-show="!loading"><address-list addresses=addresses></address-list></p>
       </div>
@@ -14,7 +16,8 @@
             <p>
                <input name="showhide" type="checkbox" ng-model="showmodal"><label for="showhide">Show a defered template?</label>
                <modal ng-show='showmodal'></modal>
-            </p>
+            </p>{{selectedItem}}
+            <select ng-model="selectedItem" ng-options="item.name for item in options"></select>
          </form>
       </div>
    </div>

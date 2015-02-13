@@ -4,5 +4,5 @@
 //this was quicker than a gulp task for this, this
 //file must exist to require a directory
 module.exports = function(app) {
-	require('./addressModelService.js')(app);
+   require('./addressModelService.js')(app);
 };

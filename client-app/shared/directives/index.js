@@ -8,4 +8,5 @@ module.exports = function(app) {
 	require('./addressDirective.js')(app);
 	require('./createAddressDirective.js')(app);
 	require('./modalDirective.js')(app);
+	require('./capitalizeDirective.js')(app);
 };

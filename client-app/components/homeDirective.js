@@ -5,6 +5,26 @@ module.exports = function(app) {
 			template: template,
 			link: function(scope, el, attr) {
 				//nothing for now
+				scope.bananas = {};
+				scope.options = [
+					{
+						name:'face',
+						value: 1
+					},
+					{
+						name: 'froot',
+						value: 2
+					}
+				];
+
+				scope.doStuff = function() {
+					scope.bananas.foo = 'bar';
+				}
+
+				scope.selectedItem = scope.options[0];
+				scope.$watch(scope.bananas, function() {
+					scope.cake = scope.bananas.foo;
+				})
 			}
 		};
 	});

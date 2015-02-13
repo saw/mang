@@ -1,10 +1,10 @@
 module.exports = function(app) {
-	app.directive('modal', function() {
+   app.directive('modal', function() {
 
-		return {
-			restrict: 'AE',
-			templateUrl: '/tmpl/modal'
-		};
-	});
+      return {
+         restrict: 'AE',
+         templateUrl: '/tmpl/modal'
+      };
+   });
 };
 
